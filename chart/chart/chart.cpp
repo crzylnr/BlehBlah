@@ -33,6 +33,7 @@ int printChart(int valuesChart[], int largeChart) {
 	} while (printI < sizeof(valuesChart)/sizeof(int));
 
 	system("pause");
+	///nice xD
 
 	return 0;
 }
