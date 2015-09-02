@@ -3,6 +3,10 @@
 #include "stdafx.h"
 #include <iostream>
 using namespace std;
+// MAKE SURE YOUR VALUES ARE DEFINED 
+//IF LEFT UNDIFINED LINUX MIGHT 
+//JUST GIVE IT WEIRD VALUES AND 
+//IT MIGHT NOT COMPILE WHEN TURNED IN 
 
 int printChart(int valuesChart[], int largeChart);
 int largestNumber(int valuesCharge[]);
