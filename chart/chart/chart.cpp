@@ -1,8 +1,15 @@
-// chart.cpp : Defines the entry point for the console application.
-//
-#include "stdafx.h"
+// chart.cpp
+//Cervantes, John 
+//jcervantes
+
+//This is needed to work on house computer 
+//#include "stdafx.h"
+
+
 #include <iostream>
 using namespace std;
+
+//Notes
 // MAKE SURE YOUR VALUES ARE DEFINED 
 //IF LEFT UNDIFINED LINUX MIGHT 
 //JUST GIVE IT WEIRD VALUES AND 
@@ -12,54 +19,77 @@ int printChart(int valuesChart[], int largeChart);
 int largestNumber(int valuesCharge[]);
 
 
-int main()
+int main() 
 {
-	const int MAX = 5;
-	int values[MAX] = {51, 2, 3, 40, 5};
+	const int MAX = 100;
+	int values[MAX] = { 1, 2, 5, 4, 9, 0 };
 	int large;
-	int i = -1;
+	
+	// cin for arrays was not surfe how to get user input the wau th eassignment asked
+	// <1><space><4><space><2><space><3><space><0><enter>
+	// this gave me a hard time and was not able ot get user input properly
 
-	/*do {
-		i++;
-		cin >> values[i];
-	} while (values[i] != 0);*/
+	// To test my code i hard coded the array and worked with that 
+	// I was ble to succesfully print oput the chart 
 
+	//cin >> values[];
 	large = largestNumber(values);
 	printChart(values, large);
 
     return 0;
 }
 
+
+// This function prints out th chart 
+// it takes an array argument and a regular int
 int printChart(int valuesChart[], int largeNum) {
-	/*int printI = -1;
-	do {
-		cout << printI << "\n" << valuesChart[printI] << "\n" ;
-	} while (printI < sizeof(valuesChart)/sizeof(int));*/
 
+	int MAX = 100;
 
-
-	for (int y = 0; y <largeNum; y++) {
-		for (int x = 0;  x < 4; x++) {
-			if (valuesChart[x] >= 4 - y) {
-				//system("pause");
-				cout << "x" << endl;
-			}
-			else
-				cout << " ";
+	// controls the row the printer is on 
+	for (int row = 0; row < largeNum; row++)
+	{
+		//controls the column the printer is on and
+		//prints the appropiate chraracter 
+		for (int col = 0; col < MAX; col++)
+		{
+			if (valuesChart[col] >= largeNum - row)
+				cout << "*";
+			else cout << " ";
 		}
+		cout << endl;
 	}
-	cout << endl;
+	
+
+	
+	/*while (valuesChart[index] != 0)
+	{
+		cout << "The current number is " << valuesChart[index] << endl;
+		system("pause");
+
+		for (int row = 0; row < 5; row++)
+		{
+
+			for (int star = 0; star < 5; star++)
+			{
+				cout << "*";
+			}
+			cout << endl;
+		}
+		index++;
+	} */
 
 
-	system("pause");
-	///nice xD
-
+	//system("pause");
 	return 0;
 }
 
+
+// This function compare the indexes of the array and returns the largest value
+// it takes an array as an argument
 int largestNumber(int valuesLarge[])
 {
-	cout << "LARGE \n";
+	
 	int largeValue = 0;
 	int x = 0;
 	int y = -1;
@@ -74,9 +104,9 @@ int largestNumber(int valuesLarge[])
 		if (valuesLarge[y] > valuesLarge[x] && valuesLarge[y] > largeValue) {
 			largeValue = valuesLarge[y];
 		}
-	} while (y < 10);
+	} while (y < 5);
 
-	cout << "Largest number is " << largeValue << endl;
+	//cout << "LARGE " << largeValue << endl;
 	return largeValue;
 }
 
