@@ -3,7 +3,7 @@
 //jcervantes
 
 //This is needed to work on house computer 
-//#include "stdafx.h"
+#include "stdafx.h"
 
 
 #include <iostream>
@@ -31,7 +31,13 @@ int main()
 
 	// To test my code i hard coded the array and worked with that 
 	// I was ble to succesfully print oput the chart 
-
+	int num = 0; 
+	for(;num<MAX;num++){
+    cin >>values[num];
+    if(values[num]==0){
+      break;
+    }
+  }
 	//cin >> values[];
 	large = largestNumber(values);
 	printChart(values, large);
@@ -80,7 +86,7 @@ int printChart(int valuesChart[], int largeNum) {
 	} */
 
 
-	//system("pause");
+	system("pause");
 	return 0;
 }
 
